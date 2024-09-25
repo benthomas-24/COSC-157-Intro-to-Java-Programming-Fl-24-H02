@@ -1,4 +1,4 @@
-// int amountOfNuts = getValidIntInput(input, "Enter the amount of nuts: ");
+package Homework;// int amountOfNuts = getValidIntInput(input, "Enter the amount of nuts: ");
 import java.util.Scanner;
 public class squirrels_bt {
     public static void main(String[] args) {

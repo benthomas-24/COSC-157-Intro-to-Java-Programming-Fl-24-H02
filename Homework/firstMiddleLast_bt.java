@@ -1,4 +1,4 @@
-// String firstName, middleName, lastName;
+package Homework;// String firstName, middleName, lastName;
 import java.util.Scanner;
 public class firstMiddleLast_bt {
     public static void main(String[] args) {
@@ -9,8 +9,10 @@ public class firstMiddleLast_bt {
         System.out.printf("Length of First Name: %d%n", firstName.length());
         System.out.printf("Length of Middle Name: %d%n", middleName.length());
         System.out.printf("Length of Last Name: %d%n", lastName.length());
+        System.out.printf("Total length of all names: %d%n", firstName.length() + middleName.length() + lastName.length());
         System.out.printf("Initials: %c%c%c%n", firstName.toUpperCase().charAt(0), middleName.toUpperCase().charAt(0), lastName.toUpperCase().charAt(0));
         System.out.printf("Total ASCII Values of Initials: %d%n", (int)firstName.toUpperCase().charAt(0) + (int)middleName.toUpperCase().charAt(0) + (int)lastName.toUpperCase().charAt(0));
+
         input.close();
     } // main method
 

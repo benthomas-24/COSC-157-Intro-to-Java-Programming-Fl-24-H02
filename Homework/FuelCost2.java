@@ -1,7 +1,9 @@
+package Homework;
+
 import java.util.Scanner;
 import java.lang.Math;
 
-public class FuelCost_bt {
+public class FuelCost2 {
     private static final int MIN_ODOMETER_READING = 0;
     private static final double MIN_COST_PER_GALLON = 0.01;
 
@@ -25,7 +27,7 @@ public class FuelCost_bt {
         System.out.printf("The Annual cost of fuel is $%.2f. This is based on your input of %d miles driven per year%n", annualCostOfFuel, numberOfMilesDrivenPerYear);
 
         input.close();
-    }// main method
+    }
 
     private static int getValidIntInput(Scanner input, String prompt, int minValue) {
         int value;
@@ -35,14 +37,13 @@ public class FuelCost_bt {
                 value = Integer.parseInt(input.nextLine());
                 if (value >= minValue) {
                     return value;
-                }// if
+                }
                 System.out.printf("Please enter a value larger than %d%n", minValue - 1);
-            }// try
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Please enter integer values only.");
-            }// catch
-        }// while
-    }// getValidIntInput method
+            }
+        }
+    }
 
     private static double getValidDoubleInput(Scanner input, String prompt, double minValue) {
         double value;
@@ -52,12 +53,11 @@ public class FuelCost_bt {
                 value = Double.parseDouble(input.nextLine());
                 if (value >= minValue) {
                     return value;
-                }// if
+                }
                 System.out.printf("Please enter a value larger than %.2f%n", minValue);
-            }// try
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Please enter valid number values only.");
-            }// catch
-        }// while
-    }// getValidDoubleInput method
-}// FuelCost_bt class
+            }
+        }
+    }
+}

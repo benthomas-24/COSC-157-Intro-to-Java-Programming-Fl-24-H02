@@ -1,3 +1,5 @@
+package Homework;
+
 import java.util.Scanner;
 
 public class Volume_bt {
@@ -6,8 +8,8 @@ public class Volume_bt {
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-        double radius = getValidDoubleInput(input, "Please enter the radius of the circle (in feet): " );
-        double height = getValidDoubleInput(input, "Please enter the height of the cylinder (in feet): ");
+        double radius = getValidDoubleInput(input, "Please enter the radius of the circle (in cubic feet): " );
+        double height = getValidDoubleInput(input, "Please enter the height of the cylinder (in cubic feet): ");
         double volumeCubicFeet = PI * Math.pow(radius, 2) * height; // v = pi*r^2*h
         double volumeGallons = volumeCubicFeet / gallonsPerCubicFoot; // v = pi*r^2*h / 7.48
         System.out.printf("The volume of the cylinder is %.2f gallons.%n", volumeGallons);
