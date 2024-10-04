@@ -6,48 +6,40 @@ public class Taxes_bt {
     // Ask the user to enter their Taxable income
     // Outpoot the amount of their tax
     Scanner input = new Scanner(System.in);
-    calculateTax(input, "Please enter your annual income: %n");
+    double tax = calculateTax(input, "Please enter your annual income: %n");
+    System.out.printf("Your tax is: $%.2f%n", tax);
     input.close();
-
-    }//main method
+    }// main method
     
+    public static double calculateBracketTax(double income, double upperBound, double lowerBound, double rate){
+        double taxableAmountInBracket = Math.min(income, upperBound) - lowerBound;
+        taxableAmountInBracket = Math.max(taxableAmountInBracket, 0);
+        return taxableAmountInBracket * rate;
+    }// calculateBracketTax method
+
     public static double calculateTax(Scanner input, String prompt) {
         double income;
         double tax = 0;  
-        while(true){
+        while(true) {
             System.out.printf(prompt);
-            try {income = Double.parseDouble(input.nextLine());
-                if(income >= minIncome){
-                if (income <= 20000) {
-                    tax = income * 0.01;
-                } else if (income < 20000 && income > 50000) {
-                    tax = income * 0.02;
-                } else if (income < 50000 && income >= 75000) {
-                    tax = income * 0.03;
-                } else if (income < 75000 && income >= 100000) {
-                    tax = income * 0.04;
-                } else if (income < 100000 && income >= 250000) {
-                    tax = income * 0.05;
-                } else if (income < 250000 && income >= 500000) {
-                    tax = income * 0.06;
-                } else if (income > 500000) {
-                    tax = income * 0.07;
+            try {
+                income = Double.parseDouble(input.nextLine());
+                if(income >= minIncome) {
+                    tax = calculateBracketTax(income, 20000, 0, 0.01) +
+                          calculateBracketTax(income, 50000, 20000, 0.02) +
+                          calculateBracketTax(income, 75000, 50000, 0.03) +
+                          calculateBracketTax(income, 100000, 75000, 0.04) +
+                          calculateBracketTax(income, 250000, 100000, 0.05) +
+                          calculateBracketTax(income, 500000, 250000, 0.06) +
+                          calculateBracketTax(income, Double.MAX_VALUE, 500000, 0.07);
+                    return tax;
+                } else {
+                    System.out.printf("Please enter a value $0.00 or larger%n");
                 }
-                System.out.printf("Your tax is: %.2f%n", tax);
-                return tax;
+            } catch (NumberFormatException e) {
+                System.out.printf("Please enter a valid number%n");
             }
-            else{
-            System.out.printf("Please enter a value 0 or larger%n");}
-
-            } catch (Exception e) {
-            System.out.printf("Please enter a valid number: %n");
-                // TODO: handle exception
-            }
-            
-            
-
         }
-        
-    }//calculateTax
+    }// calculateTax
 
-}//class
+}// class
