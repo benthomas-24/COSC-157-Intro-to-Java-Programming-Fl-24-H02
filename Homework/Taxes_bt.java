@@ -7,7 +7,7 @@ public class Taxes_bt {
     // Outpoot the amount of their tax
     Scanner input = new Scanner(System.in);
     double tax = calculateTax(input, "Please enter your annual income: %n");
-    System.out.printf("Your tax is: $%.2f%n", tax);
+    System.out.printf("Your tax is: %s%n", String.format("$%,.2f", tax));
     input.close();
     }// main method
     

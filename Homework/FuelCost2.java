@@ -50,6 +50,7 @@ public class FuelCost2 {
         while (true) {
             System.out.print(prompt);
             try {
+                    
                 value = Double.parseDouble(input.nextLine());
                 if (value >= minValue) {
                     return value;
