@@ -16,7 +16,7 @@ public class Seconds_bt{
         int hours = ((seconds % SECONDS_IN_YEAR) % SECONDS_IN_DAY) / SECONDS_IN_HOUR;
         int minutes = (((seconds % SECONDS_IN_YEAR) % SECONDS_IN_DAY) % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE;
         int remainingSeconds = (((seconds % SECONDS_IN_YEAR) % SECONDS_IN_DAY) % SECONDS_IN_HOUR) % SECONDS_IN_MINUTE;
-        System.out.printf("Years: %d Days: %d Hours: %d Minutes: %d Seconds: %d%n", seconds, years, days, hours, minutes, remainingSeconds);
+        System.out.printf("Years: %d Days: %d Hours: %d Minutes: %d Seconds: %d%n", years, days, hours, minutes, remainingSeconds);
         input.close();
     }// main method
     private static int getValidIntInput(Scanner input, String prompt){

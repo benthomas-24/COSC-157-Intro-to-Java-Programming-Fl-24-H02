@@ -29,7 +29,7 @@ public class FuelCost_bt {
         input.close();
     }// main method
 
-    private static int getValidIntInput(Scanner input, String prompt, int minValue) {
+    public static int getValidIntInput(Scanner input, String prompt, int minValue) {
         int value;
         while (true) {
             System.out.print(prompt);
@@ -38,7 +38,7 @@ public class FuelCost_bt {
                 if (value >= minValue) {
                     return value;
                 }// if
-                System.out.printf("Please enter a value larger than %d%n", minValue - 1);
+                System.out.printf("Please enter a value %d or larger%n", minValue);
             }// try
             catch (NumberFormatException e) {
                 System.out.println("Please enter integer values only.");

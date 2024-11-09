@@ -1,7 +1,11 @@
 package InClass;
 
+import java.util.Scanner;
+
 public class test {
     public static void main(String[] args) {
-        System.out.println('A');
+        Scanner input = new Scanner(System.in);
+        Double num = Math.pow(2,3);
+        System.out.println(num);
     }
 }

@@ -10,9 +10,10 @@ public class Volume_bt {
         Scanner input = new Scanner(System.in);
         double radius = getValidDoubleInput(input, "Please enter the radius of the circle (in cubic feet): " );
         double height = getValidDoubleInput(input, "Please enter the height of the cylinder (in cubic feet): ");
-        double volumeCubicFeet = PI * Math.pow(radius, 2) * height; // v = pi*r^2*h
+        double volumeCubicFeet = PI * (Math.pow(radius, 2.0)) * height; // v = pi*r^2*h
         double volumeGallons = volumeCubicFeet / gallonsPerCubicFoot; // v = pi*r^2*h / 7.48
-        System.out.printf("The volume of the cylinder is %.2f gallons.%n", volumeGallons);
+        System.out.printf("The cylinder's volume is %.2f cubic feet%n", volumeCubicFeet);
+        System.out.printf("The cylinder could hold %.2f gallons of water%n", volumeGallons);
         input.close();
 
     } // main method
