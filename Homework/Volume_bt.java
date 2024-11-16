@@ -1,5 +1,6 @@
 package Homework;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Volume_bt {
@@ -15,7 +16,6 @@ public class Volume_bt {
         System.out.printf("The cylinder's volume is %.2f cubic feet%n", volumeCubicFeet);
         System.out.printf("The cylinder could hold %.2f gallons of water%n", volumeGallons);
         input.close();
-
     } // main method
     private static double getValidDoubleInput(Scanner input, String prompt){
         Double value;
